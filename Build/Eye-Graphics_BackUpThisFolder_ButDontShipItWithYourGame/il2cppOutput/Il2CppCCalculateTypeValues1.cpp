@@ -19765,7 +19765,7 @@ struct ClipEvent_tB1B5AECDBECAE26DCDD484137C0921A674007B98_marshaled_com
 	VisualEffectPlayableSerializedEventNoColor_t24C9BB23681EA5BA1533E8A0B9829179FD90A202_marshaled_com ___enter;
 	VisualEffectPlayableSerializedEventNoColor_t24C9BB23681EA5BA1533E8A0B9829179FD90A202_marshaled_com ___exit;
 };
-struct U3CHandleClientU3Ed__23_t13EC03EBAD1276EC85CE3CD56DB5C483CE4EC78F 
+struct U3CHandleClientU3Ed__26_t3BBCB35E7AF987B89F8BE9C31DD968F05A87A031 
 {
 	int32_t ___U3CU3E1__state;
 	AsyncVoidMethodBuilder_t253E37B63E7E7B504878AE6563347C147F98EF2D ___U3CU3Et__builder;
@@ -19776,7 +19776,7 @@ struct U3CHandleClientU3Ed__23_t13EC03EBAD1276EC85CE3CD56DB5C483CE4EC78F
 	TaskAwaiter_1_t6207F4E776722AC1BA32517028D30E6E3071F48E ___U3CU3Eu__1;
 	TaskAwaiter_t9B661AC8C2EFA6BAB94C77BB24A5DDA82D61F833 ___U3CU3Eu__2;
 };
-struct U3CStartU3Ed__24_t49F779AC5D6D99A1EC24C182D7764F809903E530 
+struct U3CStartU3Ed__27_t7044B76A072D6A5CF6B68BAE8B6D5EF9C05493C2 
 {
 	int32_t ___U3CU3E1__state;
 	AsyncVoidMethodBuilder_t253E37B63E7E7B504878AE6563347C147F98EF2D ___U3CU3Et__builder;
@@ -20772,7 +20772,7 @@ struct FrameReadyEventHandler_tDEDADF060B051C2953122274EBF3896AF48735E8  : publi
 struct TimeEventHandler_t8F77A92148F1A0F37AE8DE9CA7E25D90D001DC1E  : public MulticastDelegate_t
 {
 };
-struct U3CStartListeningU3Ed__22_tA9212E14E27F8345F5DA06E07505BBC2B7ABEC65 
+struct U3CStartListeningU3Ed__25_t676F6DBDC26CA41754A7BF9F1DB49B7C104C1469 
 {
 	int32_t ___U3CU3E1__state;
 	AsyncTaskMethodBuilder_t7A5128C134547B5918EB1AA24FE47ED4C1DF3F06 ___U3CU3Et__builder;
@@ -22110,6 +22110,9 @@ struct Websocket_t8183FE3AEA4334DFDB9887AC03A8090749F1259E  : public MonoBehavio
 	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___mischievousSlider;
 	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___brightnessSlider;
 	Toggle_tBF13F3EBA485E06826FD8A38F4B4C1380DF21A1F* ___sillyMode;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___vidPlayer;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___vidCanvasL;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___vidCanvasR;
 };
 struct Websockettest_tEE0E50A035F7569ADFE2BC267793115A34AB2702  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -25667,11 +25670,11 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize5987 = { sizeof(U3CStartList
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5988;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize5988 = { sizeof(Websockettest_tEE0E50A035F7569ADFE2BC267793115A34AB2702), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5989;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5989 = { sizeof(U3CHandleClientU3Ed__23_t13EC03EBAD1276EC85CE3CD56DB5C483CE4EC78F)+ sizeof(RuntimeObject), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5989 = { sizeof(U3CHandleClientU3Ed__26_t3BBCB35E7AF987B89F8BE9C31DD968F05A87A031)+ sizeof(RuntimeObject), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5990;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5990 = { sizeof(U3CStartU3Ed__24_t49F779AC5D6D99A1EC24C182D7764F809903E530)+ sizeof(RuntimeObject), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5990 = { sizeof(U3CStartU3Ed__27_t7044B76A072D6A5CF6B68BAE8B6D5EF9C05493C2)+ sizeof(RuntimeObject), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5991;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5991 = { sizeof(U3CStartListeningU3Ed__22_tA9212E14E27F8345F5DA06E07505BBC2B7ABEC65)+ sizeof(RuntimeObject), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5991 = { sizeof(U3CStartListeningU3Ed__25_t676F6DBDC26CA41754A7BF9F1DB49B7C104C1469)+ sizeof(RuntimeObject), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5992;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize5992 = { sizeof(Websocket_t8183FE3AEA4334DFDB9887AC03A8090749F1259E), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize5993;
