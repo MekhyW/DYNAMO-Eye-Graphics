@@ -18,8 +18,7 @@ public class Websocket : MonoBehaviour
         hypnoticSlider, heartSlider, rainbowSlider, nightmareSlider, gearsSlider, sansSlider, mischievousSlider,
         brightnessSlider;
     public Toggle sillyMode;
-    public GameObject vidPlayer;
-    public GameObject vidCanvasL, vidCanvasR;
+    public VideoPlayerController videoPlayerController;
 
     private bool ValidateMessage(string message)
     {
@@ -63,17 +62,12 @@ public class Websocket : MonoBehaviour
                         if (terms[1] == "PLAY") 
                         {
                             Debug.Log("VIDEO PLAY " + terms[2]);
-                            vidPlayer.GetComponent<VideoPlayer>().url = terms[2];
-                            vidPlayer.SetActive(true);
-                            vidCanvasL.SetActive(true);
-                            vidCanvasR.SetActive(true);
+                            videoPlayerController.PlayVideoWithSoundOnce(terms[2]);
                         }
                         else 
                         {
                             Debug.Log("VIDEO STOP");
-                            vidPlayer.SetActive(false);
-                            vidCanvasL.SetActive(false);
-                            vidCanvasR.SetActive(false);
+                            videoPlayerController.StopVideo();
                         }
                     }
                     else 
