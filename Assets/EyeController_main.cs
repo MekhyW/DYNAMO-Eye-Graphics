@@ -127,13 +127,6 @@ public class EyeController_main : MonoBehaviour
             eyeOpenR.Value = Mathf.Lerp(eyeOpenR.Value, rightEyeClosenessSlider.maxValue - 0.7f, Time.deltaTime * SPEED);
             return;
         }
-        if (Math.Abs(leftEyeClosenessSlider.value - rightEyeClosenessSlider.value) > AVG_SLIDER)
-        {
-            eyeOpenL.Value = Mathf.Lerp(eyeOpenL.Value, leftEyeClosenessSlider.maxValue - leftEyeClosenessSlider.value, Time.deltaTime * SPEED);
-            eyeOpenR.Value = Mathf.Lerp(eyeOpenR.Value, rightEyeClosenessSlider.maxValue - rightEyeClosenessSlider.value, Time.deltaTime * SPEED);
-            return;
-        }
-        float sliderVal = (leftEyeClosenessSlider.value + rightEyeClosenessSlider.value) / 2;
         if (timer_blink <= 0)
         {
             eyeOpenL.Value = Mathf.Lerp(eyeOpenL.Value, leftEyeClosenessSlider.minValue, Time.deltaTime * SPEED);
@@ -152,10 +145,10 @@ public class EyeController_main : MonoBehaviour
         }
         else
         {
-            eyeOpenL.Value = Mathf.Lerp(eyeOpenL.Value, leftEyeClosenessSlider.maxValue - sliderVal, Time.deltaTime * SPEED);
-            eyeOpenR.Value = Mathf.Lerp(eyeOpenR.Value, rightEyeClosenessSlider.maxValue - sliderVal, Time.deltaTime * SPEED);
+            eyeOpenL.Value = Mathf.Lerp(eyeOpenL.Value, leftEyeClosenessSlider.maxValue - leftEyeClosenessSlider.value, Time.deltaTime * SPEED);
+            eyeOpenR.Value = Mathf.Lerp(eyeOpenR.Value, rightEyeClosenessSlider.maxValue - rightEyeClosenessSlider.value, Time.deltaTime * SPEED);
         }
-        if (sliderVal < 0.5) { timer_blink -= Time.deltaTime; }
+        timer_blink -= Time.deltaTime;
     }
 
     private void ApplyExpressions()
