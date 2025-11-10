@@ -266,7 +266,6 @@ struct CubismMotionPreview_tCABE46D773A9CE6C29FF158E5A4391D0478E9EE0;
 struct CubismMoveOnReimportCopyComponentsOnly_t002B4091B7D6F41EEAEE53B25B54B8643C98BEE7;
 struct CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1;
 struct CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94;
-struct CubismParametersInspector_tE38E5B68DA4301F04851778307B70D4001E1BC07;
 struct CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1;
 struct CubismPartColorsEditor_tECBAAEAB1E2A2B3FDAE543FBEC274A0E6D3F18EB;
 struct CubismRaycaster_t0FCB0051452EFB6CCDC67873C7CAF8D3C20A3B62;
@@ -670,7 +669,6 @@ struct CubismMaskMaskedJunctionU5BU5D_tAF5A06BC3A86561CBB39C99B1617C20BA60331AD;
 struct CubismMaskRendererU5BU5D_tAE950FAAAEC9ECB0991B9528709C7FBB8F77B9B0;
 struct CubismMaskTileU5BU5D_t2361B042A99466C5758F310976FE30C8A5A42805;
 struct CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD;
-struct CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072;
 struct CubismRaycastHitU5BU5D_t1AC25F25E0C8EC2BB9A66785BFDE923E0A5800C1;
 struct CubismRendererU5BU5D_t4277178E9BEF83E0317E96C48F61C54EC947F866;
 struct DisplayU5BU5D_tAD77D7EE2B839E3EDA0D1C0028B64F867F400C7F;
@@ -1981,17 +1979,6 @@ struct CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1  : public MonoB
 	CubismUnmanagedParameters_tB0EC68F593E70F43DD7F37A1F54C254F553BFFBD* ___U3CUnmanagedParametersU3Ek__BackingField;
 	int32_t ____unmanagedIndex;
 	float ___Value;
-};
-struct CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
-{
-	CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* ___U3CDestinationParametersU3Ek__BackingField;
-	CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* ___U3CDestinationPartsU3Ek__BackingField;
-	SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ____parameterValues;
-	SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ____partOpacities;
-	bool ___U3CHasUpdateControllerU3Ek__BackingField;
-};
-struct CubismParametersInspector_tE38E5B68DA4301F04851778307B70D4001E1BC07  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
-{
 };
 struct CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -3600,40 +3587,6 @@ struct CubismEyeBlinkParameterU5BU5D_t91E3184C3AD2879970C9B5266B692DDCAAC59BE3  
 		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
 	}
 };
-struct CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072  : public RuntimeArray
-{
-	ALIGN_FIELD (8) CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1* m_Items[1];
-
-	inline CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1* GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1** GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1* value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
-	}
-	inline CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1* GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1** GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1* value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
-	}
-};
 struct HitDrawableInfomationU5BU5D_tE0238A62AFEC48BA0E691DE644AFE91DAB406BE7  : public RuntimeArray
 {
 	ALIGN_FIELD (8) HitDrawableInfomation_tAC583E9735F92909A1D05B300BAB8652B35B25BF m_Items[1];
@@ -4823,15 +4776,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool CubismEyeBlinkController_get
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismEyeBlinkController_OnLateUpdate_m94E324024AFF947E43110C6F16194E9C652FFFC9 (CubismEyeBlinkController_tB833B261F0B34A36EB5EEAD5D917E652781B27E3* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterExtensionMethods_AddToValue_m01823908DF6FEF887850005370CAA0DC278B2529 (CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* ___0_parameter, float ___1_value, float ___2_weight, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterExtensionMethods_MultiplyValueBy_mF238AC5D52F4E05A37F4743BCDD5CEDCBD96F867 (CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* ___0_parameter, float ___1_value, float ___2_weight, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CubismParameterStore_set_DestinationParameters_mC4C9FE76126624704DC43DF045CBD0A28329B951_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* CubismModel_get_Parts_mBA49E03A9D9C6514CCF86107E777AAA1B9271AB1 (CubismModel_t4C2D4AC36C73AAAA31C15049BD2E5EE988B5AA86* __this, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CubismParameterStore_set_DestinationParts_mAE14B6F6B9FC850A4BFFEA3BE572DF28FB662C69_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* ___0_value, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CubismParameterStore_set_HasUpdateController_m3C6E0CFFD53FA682C09F08123C9C04729F112C62_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, bool ___0_value, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_SaveParameters_m68FDCCC4D9785A4A460F7474373B4D18DFDEC3EB (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) ;
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool CubismParameterStore_get_HasUpdateController_mEFC1034047A20F89CDD716806E781E8F02E611B6_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_Refresh_m29FE8904FAB01ED903A7FA46BAFABABCCD19E868 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Bounds_get_extents_mFE6DC407FCE2341BE2C750CB554055D211281D25_inline (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_SetMinMax_mB5F7DDF18EDB7F3F25FA6D2B36824F28978C540F_inline (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_min, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_max, const RuntimeMethod* method) ;
@@ -5292,55 +5236,100 @@ IL_02ad:
 
 IL_02bd:
 	{
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_80 = __this->___eyeballXL;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_81 = __this->___eyeballXL;
-		NullCheck(L_81);
-		float L_82 = L_81->___Value;
-		float L_83 = __this->___xCurrent;
+		float L_80 = __this->___xCurrent;
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		float L_81;
+		L_81 = fabsf(L_80);
+		if ((!(((float)L_81) < ((float)(0.25f)))))
+		{
+			goto IL_0341;
+		}
+	}
+	{
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_82 = __this->___eyeballXL;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_83 = __this->___eyeballXL;
+		NullCheck(L_83);
+		float L_84 = L_83->___Value;
+		float L_85 = __this->___xCurrent;
 		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
-		float L_84 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
-		float L_85;
-		L_85 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_86;
-		L_86 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_82, ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(L_83, L_84)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_85, (18.0f))), NULL);
-		NullCheck(L_80);
-		L_80->___Value = L_86;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_87 = __this->___eyeballYL;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_88 = __this->___eyeballYL;
-		NullCheck(L_88);
-		float L_89 = L_88->___Value;
-		float L_90 = __this->___yCurrent;
-		float L_91 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
-		float L_92;
-		L_92 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_93;
-		L_93 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_89, ((float)il2cpp_codegen_add(L_90, L_91)), ((float)il2cpp_codegen_multiply(L_92, (18.0f))), NULL);
-		NullCheck(L_87);
-		L_87->___Value = L_93;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_94 = __this->___eyeballXR;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_95 = __this->___eyeballXR;
-		NullCheck(L_95);
-		float L_96 = L_95->___Value;
-		float L_97 = __this->___xCurrent;
-		float L_98 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
-		float L_99;
-		L_99 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_100;
-		L_100 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_96, ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_97, L_98)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_99, (18.0f))), NULL);
-		NullCheck(L_94);
-		L_94->___Value = L_100;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_101 = __this->___eyeballYR;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_102 = __this->___eyeballYR;
-		NullCheck(L_102);
-		float L_103 = L_102->___Value;
-		float L_104 = __this->___yCurrent;
-		float L_105 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
-		float L_106;
-		L_106 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_107;
-		L_107 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_103, ((float)il2cpp_codegen_add(L_104, L_105)), ((float)il2cpp_codegen_multiply(L_106, (18.0f))), NULL);
-		NullCheck(L_101);
-		L_101->___Value = L_107;
+		float L_86 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
+		float L_87;
+		L_87 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_88;
+		L_88 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_84, ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(L_85, L_86)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_87, (18.0f))), NULL);
+		NullCheck(L_82);
+		L_82->___Value = L_88;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_89 = __this->___eyeballXR;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_90 = __this->___eyeballXR;
+		NullCheck(L_90);
+		float L_91 = L_90->___Value;
+		float L_92 = __this->___xCurrent;
+		float L_93 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
+		float L_94;
+		L_94 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_95;
+		L_95 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_91, ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_92, L_93)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_94, (18.0f))), NULL);
+		NullCheck(L_89);
+		L_89->___Value = L_95;
+		goto IL_03a5;
+	}
+
+IL_0341:
+	{
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_96 = __this->___eyeballXL;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_97 = __this->___eyeballXL;
+		NullCheck(L_97);
+		float L_98 = L_97->___Value;
+		float L_99 = __this->___xCurrent;
+		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
+		float L_100 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
+		float L_101;
+		L_101 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_102;
+		L_102 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_98, ((float)il2cpp_codegen_add(L_99, L_100)), ((float)il2cpp_codegen_multiply(L_101, (18.0f))), NULL);
+		NullCheck(L_96);
+		L_96->___Value = L_102;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_103 = __this->___eyeballXR;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_104 = __this->___eyeballXR;
+		NullCheck(L_104);
+		float L_105 = L_104->___Value;
+		float L_106 = __this->___xCurrent;
+		float L_107 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
+		float L_108;
+		L_108 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_109;
+		L_109 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_105, ((float)il2cpp_codegen_add(L_106, L_107)), ((float)il2cpp_codegen_multiply(L_108, (18.0f))), NULL);
+		NullCheck(L_103);
+		L_103->___Value = L_109;
+	}
+
+IL_03a5:
+	{
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_110 = __this->___eyeballYL;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_111 = __this->___eyeballYL;
+		NullCheck(L_111);
+		float L_112 = L_111->___Value;
+		float L_113 = __this->___yCurrent;
+		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
+		float L_114 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
+		float L_115;
+		L_115 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_116;
+		L_116 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_112, ((float)il2cpp_codegen_add(L_113, L_114)), ((float)il2cpp_codegen_multiply(L_115, (18.0f))), NULL);
+		NullCheck(L_110);
+		L_110->___Value = L_116;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_117 = __this->___eyeballYR;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_118 = __this->___eyeballYR;
+		NullCheck(L_118);
+		float L_119 = L_118->___Value;
+		float L_120 = __this->___yCurrent;
+		float L_121 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
+		float L_122;
+		L_122 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_123;
+		L_123 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_119, ((float)il2cpp_codegen_add(L_120, L_121)), ((float)il2cpp_codegen_multiply(L_122, (18.0f))), NULL);
+		NullCheck(L_117);
+		L_117->___Value = L_123;
 		return;
 	}
 }
@@ -24314,454 +24303,6 @@ IL_0062:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParametersInspector__ctor_m19B2944318662B9BABF9C855D2FB0611D1F8B376 (CubismParametersInspector_tE38E5B68DA4301F04851778307B70D4001E1BC07* __this, const RuntimeMethod* method) 
-{
-	{
-		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_0 = __this->___U3CDestinationParametersU3Ek__BackingField;
-		return L_0;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_set_DestinationParameters_mC4C9FE76126624704DC43DF045CBD0A28329B951 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_0 = ___0_value;
-		__this->___U3CDestinationParametersU3Ek__BackingField = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDestinationParametersU3Ek__BackingField), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_0 = __this->___U3CDestinationPartsU3Ek__BackingField;
-		return L_0;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_set_DestinationParts_mAE14B6F6B9FC850A4BFFEA3BE572DF28FB662C69 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_0 = ___0_value;
-		__this->___U3CDestinationPartsU3Ek__BackingField = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDestinationPartsU3Ek__BackingField), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CubismParameterStore_get_HasUpdateController_mEFC1034047A20F89CDD716806E781E8F02E611B6 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___U3CHasUpdateControllerU3Ek__BackingField;
-		return L_0;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_set_HasUpdateController_m3C6E0CFFD53FA682C09F08123C9C04729F112C62 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, bool ___0_value, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___0_value;
-		__this->___U3CHasUpdateControllerU3Ek__BackingField = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CubismParameterStore_get_ExecutionOrder_mFA2EEC06A833FAC59C17F1160A2F395DCE7DDDD1 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CubismUpdateExecutionOrder_tEB35390C29CB9D96F29473C9C6DD57349FD92D8E_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		il2cpp_codegen_runtime_class_init_inline(CubismUpdateExecutionOrder_tEB35390C29CB9D96F29473C9C6DD57349FD92D8E_il2cpp_TypeInfo_var);
-		int32_t L_0 = ((CubismUpdateExecutionOrder_tEB35390C29CB9D96F29473C9C6DD57349FD92D8E_StaticFields*)il2cpp_codegen_static_fields_for(CubismUpdateExecutionOrder_tEB35390C29CB9D96F29473C9C6DD57349FD92D8E_il2cpp_TypeInfo_var))->___CubismParameterStoreSaveParameters;
-		return L_0;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CubismParameterStore_get_NeedsUpdateOnEditing_m5D14F7E95E783390FF1C023F7DB7335A7E1239E1 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		return (bool)0;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_Refresh_m29FE8904FAB01ED903A7FA46BAFABABCCD19E868 (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisCubismUpdateController_tAEB12D48542EA89508EB065AC3318347200958F6_m0D805AD9E015B17250E64CDD2DC942C9B823E87C_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_0;
-		L_0 = CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321_inline(__this, NULL);
-		if (L_0)
-		{
-			goto IL_001a;
-		}
-	}
-	{
-		CubismModel_t4C2D4AC36C73AAAA31C15049BD2E5EE988B5AA86* L_1;
-		L_1 = ComponentExtensionMethods_FindCubismModel_mA4A461211FC3EA2EFFB4763F1EB811067887DA8F(__this, (bool)0, NULL);
-		NullCheck(L_1);
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_2;
-		L_2 = CubismModel_get_Parameters_m861953C0E16D5893FD2AC7DCF4B2770CFEADD2DB(L_1, NULL);
-		CubismParameterStore_set_DestinationParameters_mC4C9FE76126624704DC43DF045CBD0A28329B951_inline(__this, L_2, NULL);
-	}
-
-IL_001a:
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_3;
-		L_3 = CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39_inline(__this, NULL);
-		if (L_3)
-		{
-			goto IL_0034;
-		}
-	}
-	{
-		CubismModel_t4C2D4AC36C73AAAA31C15049BD2E5EE988B5AA86* L_4;
-		L_4 = ComponentExtensionMethods_FindCubismModel_mA4A461211FC3EA2EFFB4763F1EB811067887DA8F(__this, (bool)0, NULL);
-		NullCheck(L_4);
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_5;
-		L_5 = CubismModel_get_Parts_mBA49E03A9D9C6514CCF86107E777AAA1B9271AB1(L_4, NULL);
-		CubismParameterStore_set_DestinationParts_mAE14B6F6B9FC850A4BFFEA3BE572DF28FB662C69_inline(__this, L_5, NULL);
-	}
-
-IL_0034:
-	{
-		CubismUpdateController_tAEB12D48542EA89508EB065AC3318347200958F6* L_6;
-		L_6 = Component_GetComponent_TisCubismUpdateController_tAEB12D48542EA89508EB065AC3318347200958F6_m0D805AD9E015B17250E64CDD2DC942C9B823E87C(__this, Component_GetComponent_TisCubismUpdateController_tAEB12D48542EA89508EB065AC3318347200958F6_m0D805AD9E015B17250E64CDD2DC942C9B823E87C_RuntimeMethod_var);
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_7;
-		L_7 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_6, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		CubismParameterStore_set_HasUpdateController_m3C6E0CFFD53FA682C09F08123C9C04729F112C62_inline(__this, L_7, NULL);
-		CubismParameterStore_SaveParameters_m68FDCCC4D9785A4A460F7474373B4D18DFDEC3EB(__this, NULL);
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_OnLateUpdate_mFAB25791645265874595D77D4BE6EF9FFF06604F (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0;
-		L_0 = CubismParameterStore_get_HasUpdateController_mEFC1034047A20F89CDD716806E781E8F02E611B6_inline(__this, NULL);
-		if (L_0)
-		{
-			goto IL_0009;
-		}
-	}
-	{
-		return;
-	}
-
-IL_0009:
-	{
-		CubismParameterStore_SaveParameters_m68FDCCC4D9785A4A460F7474373B4D18DFDEC3EB(__this, NULL);
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_SaveParameters_m68FDCCC4D9785A4A460F7474373B4D18DFDEC3EB (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	int32_t V_1 = 0;
-	{
-		bool L_0;
-		L_0 = Behaviour_get_enabled_mAAC9F15E9EBF552217A5AE2681589CC0BFA300C1(__this, NULL);
-		if (L_0)
-		{
-			goto IL_0009;
-		}
-	}
-	{
-		return;
-	}
-
-IL_0009:
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_1;
-		L_1 = CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321_inline(__this, NULL);
-		if (!L_1)
-		{
-			goto IL_002c;
-		}
-	}
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_2 = __this->____parameterValues;
-		if (L_2)
-		{
-			goto IL_002c;
-		}
-	}
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_3;
-		L_3 = CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321_inline(__this, NULL);
-		NullCheck(L_3);
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_4 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)SZArrayNew(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_3)->max_length)));
-		__this->____parameterValues = L_4;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____parameterValues), (void*)L_4);
-	}
-
-IL_002c:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_5 = __this->____parameterValues;
-		if (!L_5)
-		{
-			goto IL_005c;
-		}
-	}
-	{
-		V_0 = 0;
-		goto IL_0051;
-	}
-
-IL_0038:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_6 = __this->____parameterValues;
-		int32_t L_7 = V_0;
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_8;
-		L_8 = CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321_inline(__this, NULL);
-		int32_t L_9 = V_0;
-		NullCheck(L_8);
-		int32_t L_10 = L_9;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
-		NullCheck(L_11);
-		float L_12 = L_11->___Value;
-		NullCheck(L_6);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(L_7), (float)L_12);
-		int32_t L_13 = V_0;
-		V_0 = ((int32_t)il2cpp_codegen_add(L_13, 1));
-	}
-
-IL_0051:
-	{
-		int32_t L_14 = V_0;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_15 = __this->____parameterValues;
-		NullCheck(L_15);
-		if ((((int32_t)L_14) < ((int32_t)((int32_t)(((RuntimeArray*)L_15)->max_length)))))
-		{
-			goto IL_0038;
-		}
-	}
-
-IL_005c:
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_16;
-		L_16 = CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39_inline(__this, NULL);
-		if (!L_16)
-		{
-			goto IL_007f;
-		}
-	}
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_17 = __this->____partOpacities;
-		if (L_17)
-		{
-			goto IL_007f;
-		}
-	}
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_18;
-		L_18 = CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39_inline(__this, NULL);
-		NullCheck(L_18);
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_19 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)SZArrayNew(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_18)->max_length)));
-		__this->____partOpacities = L_19;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____partOpacities), (void*)L_19);
-	}
-
-IL_007f:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_20 = __this->____partOpacities;
-		if (!L_20)
-		{
-			goto IL_00af;
-		}
-	}
-	{
-		V_1 = 0;
-		goto IL_00a4;
-	}
-
-IL_008b:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_21 = __this->____partOpacities;
-		int32_t L_22 = V_1;
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_23;
-		L_23 = CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39_inline(__this, NULL);
-		int32_t L_24 = V_1;
-		NullCheck(L_23);
-		int32_t L_25 = L_24;
-		CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1* L_26 = (L_23)->GetAt(static_cast<il2cpp_array_size_t>(L_25));
-		NullCheck(L_26);
-		float L_27 = L_26->___Opacity;
-		NullCheck(L_21);
-		(L_21)->SetAt(static_cast<il2cpp_array_size_t>(L_22), (float)L_27);
-		int32_t L_28 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add(L_28, 1));
-	}
-
-IL_00a4:
-	{
-		int32_t L_29 = V_1;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_30 = __this->____partOpacities;
-		NullCheck(L_30);
-		if ((((int32_t)L_29) < ((int32_t)((int32_t)(((RuntimeArray*)L_30)->max_length)))))
-		{
-			goto IL_008b;
-		}
-	}
-
-IL_00af:
-	{
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_RestoreParameters_m44FE57347A55E912731970480E8D98AAD04D441B (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	int32_t V_0 = 0;
-	int32_t V_1 = 0;
-	{
-		bool L_0;
-		L_0 = Behaviour_get_enabled_mAAC9F15E9EBF552217A5AE2681589CC0BFA300C1(__this, NULL);
-		if (L_0)
-		{
-			goto IL_0009;
-		}
-	}
-	{
-		return;
-	}
-
-IL_0009:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_1 = __this->____parameterValues;
-		if (!L_1)
-		{
-			goto IL_0039;
-		}
-	}
-	{
-		V_0 = 0;
-		goto IL_002e;
-	}
-
-IL_0015:
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_2;
-		L_2 = CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321_inline(__this, NULL);
-		int32_t L_3 = V_0;
-		NullCheck(L_2);
-		int32_t L_4 = L_3;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_6 = __this->____parameterValues;
-		int32_t L_7 = V_0;
-		NullCheck(L_6);
-		int32_t L_8 = L_7;
-		float L_9 = (L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_8));
-		NullCheck(L_5);
-		L_5->___Value = L_9;
-		int32_t L_10 = V_0;
-		V_0 = ((int32_t)il2cpp_codegen_add(L_10, 1));
-	}
-
-IL_002e:
-	{
-		int32_t L_11 = V_0;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_12 = __this->____parameterValues;
-		NullCheck(L_12);
-		if ((((int32_t)L_11) < ((int32_t)((int32_t)(((RuntimeArray*)L_12)->max_length)))))
-		{
-			goto IL_0015;
-		}
-	}
-
-IL_0039:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_13 = __this->____partOpacities;
-		if (!L_13)
-		{
-			goto IL_0069;
-		}
-	}
-	{
-		V_1 = 0;
-		goto IL_005e;
-	}
-
-IL_0045:
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_14;
-		L_14 = CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39_inline(__this, NULL);
-		int32_t L_15 = V_1;
-		NullCheck(L_14);
-		int32_t L_16 = L_15;
-		CubismPart_t101CA55457F7BE5E6ADE3DAB39D8DDA63C352BC1* L_17 = (L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_16));
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_18 = __this->____partOpacities;
-		int32_t L_19 = V_1;
-		NullCheck(L_18);
-		int32_t L_20 = L_19;
-		float L_21 = (L_18)->GetAt(static_cast<il2cpp_array_size_t>(L_20));
-		NullCheck(L_17);
-		L_17->___Opacity = L_21;
-		int32_t L_22 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add(L_22, 1));
-	}
-
-IL_005e:
-	{
-		int32_t L_23 = V_1;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_24 = __this->____partOpacities;
-		NullCheck(L_24);
-		if ((((int32_t)L_23) < ((int32_t)((int32_t)(((RuntimeArray*)L_24)->max_length)))))
-		{
-			goto IL_0045;
-		}
-	}
-
-IL_0069:
-	{
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore_OnEnable_m3F153C35D243ABC4E5CC859EE3222C8FA4F81CCE (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		CubismParameterStore_Refresh_m29FE8904FAB01ED903A7FA46BAFABABCCD19E868(__this, NULL);
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismParameterStore__ctor_m171643A227A2970592493281708F2833BD0A6FAC (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline (float ___0_value, float ___1_min, float ___2_max, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -27022,53 +26563,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CubismEyeBlinkController_set
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool CubismEyeBlinkController_get_HasUpdateController_m710132B5DC52000B78A1BAFE6AA838BAFFB73D59_inline (CubismEyeBlinkController_tB833B261F0B34A36EB5EEAD5D917E652781B27E3* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___U3CHasUpdateControllerU3Ek__BackingField;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* CubismParameterStore_get_DestinationParameters_mB44BB11A37D99A1C3B8C52D8FCBBCE492BB15321_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_0 = __this->___U3CDestinationParametersU3Ek__BackingField;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CubismParameterStore_set_DestinationParameters_mC4C9FE76126624704DC43DF045CBD0A28329B951_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		CubismParameterU5BU5D_t4D3A9C7503759B903F8D54008A230C075B73B0FD* L_0 = ___0_value;
-		__this->___U3CDestinationParametersU3Ek__BackingField = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDestinationParametersU3Ek__BackingField), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* CubismParameterStore_get_DestinationParts_m8E58AA2A948FF5562D9F5A76C02D4BC5D0CEBB39_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
-{
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_0 = __this->___U3CDestinationPartsU3Ek__BackingField;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CubismParameterStore_set_DestinationParts_mAE14B6F6B9FC850A4BFFEA3BE572DF28FB662C69_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* ___0_value, const RuntimeMethod* method) 
-{
-	{
-		CubismPartU5BU5D_tD58E48B906F25EE9DBAEFB7069A2180C248DB072* L_0 = ___0_value;
-		__this->___U3CDestinationPartsU3Ek__BackingField = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDestinationPartsU3Ek__BackingField), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CubismParameterStore_set_HasUpdateController_m3C6E0CFFD53FA682C09F08123C9C04729F112C62_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, bool ___0_value, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___0_value;
-		__this->___U3CHasUpdateControllerU3Ek__BackingField = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool CubismParameterStore_get_HasUpdateController_mEFC1034047A20F89CDD716806E781E8F02E611B6_inline (CubismParameterStore_t4C4D411E0B92C0C74A70748670F3A99E5B472B94* __this, const RuntimeMethod* method) 
 {
 	{
 		bool L_0 = __this->___U3CHasUpdateControllerU3Ek__BackingField;
