@@ -21707,6 +21707,7 @@ struct EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334  : public Mo
 	PostProcessProfile_t5AC205759572A2CBFE65B0D7D93ED70DA5CFAEEA* ___postProcessProfile;
 	AutoExposure_t3DC0981C2B844D7B8E12CE9C8C731F4387846F5C* ___autoExposure;
 	double ___X_DELTA_LIMIT;
+	double ___Y_DELTA_LIMIT;
 	float ___xCurrent;
 	float ___yCurrent;
 	Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* ___closest;
@@ -24413,8 +24414,8 @@ struct CubismRenderer_t0EED3DD1105B0F9004C0A95E2582D50AB9BBF72F_StaticFields
 struct EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields
 {
 	DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* ___X_SET;
+	DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* ___Y_SET;
 	float ___timer_idle;
-	float ___timer_ymove;
 	float ___timer_blink;
 	float ___timer_glitch;
 	float ___timer_gears;

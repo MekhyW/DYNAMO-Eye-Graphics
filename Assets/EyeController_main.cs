@@ -22,19 +22,19 @@ public class EyeController_main : MonoBehaviour
 
     const float SPEED = 18;
     const float TIMER_IDLE_RAND_MAX = 1.5f;
-    const float TIMER_YMOVE_RAND_MAX = 6.0f;
     const float TIMER_BLINK_RAND_MAX = 16.0f;
     const float TIMER_GLITCH_RAND_MAX = 60.0f;
     const float TIMER_GEARS_RAND_MAX = 60.0f;
     const float BLINK_DURATION = 0.1f;
     const float AVG_SLIDER = 0.5f;
     static double[] X_SET = { -1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 };
+    static double[] Y_SET = { -1, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 };
     double X_DELTA_LIMIT = 2.0 / (X_SET.Length - 1) * 0.75;
+    double Y_DELTA_LIMIT = 2.0 / (Y_SET.Length - 1) * 0.75;
 
     float xCurrent = 0;
     float yCurrent = 0;
     static float timer_idle = 0;
-    static float timer_ymove = 0;
     static float timer_blink = 0;
     static float timer_glitch = 0;
     static float timer_gears = 0;
@@ -88,12 +88,10 @@ public class EyeController_main : MonoBehaviour
             xCurrent = (float)closest(xSlider.value, X_SET);
             timer_idle = UnityEngine.Random.Range(0.0f, TIMER_IDLE_RAND_MAX);
         }
-        if (timer_ymove <= 0)
-        {
-            yCurrent = RandomGaussian((float)-AVG_SLIDER, (float)AVG_SLIDER);
-            timer_ymove = UnityEngine.Random.Range(0.0f, TIMER_YMOVE_RAND_MAX);
+        if (Math.Abs(ySlider.value - yCurrent) > Y_DELTA_LIMIT) { 
+            yCurrent = (float)closest(ySlider.value, Y_SET);
+            timer_idle = UnityEngine.Random.Range(0.0f, TIMER_IDLE_RAND_MAX);
         }
-        else { timer_ymove -= Time.deltaTime; }
         if (timer_idle <= 0)
         {
             offsetX_idle = UnityEngine.Random.Range((float)-xSlider.maxValue / 20, (float)xSlider.maxValue / 20);

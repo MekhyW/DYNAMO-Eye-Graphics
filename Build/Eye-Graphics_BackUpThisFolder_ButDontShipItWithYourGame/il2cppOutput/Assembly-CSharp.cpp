@@ -2150,6 +2150,7 @@ struct EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334  : public Mo
 	PostProcessProfile_t5AC205759572A2CBFE65B0D7D93ED70DA5CFAEEA* ___postProcessProfile;
 	AutoExposure_t3DC0981C2B844D7B8E12CE9C8C731F4387846F5C* ___autoExposure;
 	double ___X_DELTA_LIMIT;
+	double ___Y_DELTA_LIMIT;
 	float ___xCurrent;
 	float ___yCurrent;
 	Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* ___closest;
@@ -2615,8 +2616,8 @@ struct CubismRenderer_t0EED3DD1105B0F9004C0A95E2582D50AB9BBF72F_StaticFields
 struct EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields
 {
 	DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* ___X_SET;
+	DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* ___Y_SET;
 	float ___timer_idle;
-	float ___timer_ymove;
 	float ___timer_blink;
 	float ___timer_glitch;
 	float ___timer_gears;
@@ -3840,12 +3841,12 @@ inline double Func_3_Invoke_m1AB633A955DCC8CB7A03B5BEAF3D806E36B73F7D_inline (Fu
 	return ((  double (*) (Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371*, double, DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE*, const RuntimeMethod*))Func_3_Invoke_m492B763351FA9855051075C164063198DC0B75D6_gshared_inline)(__this, ___0_arg1, ___1_arg2, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494 (float ___0_minInclusive, float ___1_maxInclusive, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float EyeController_main_RandomGaussian_m67C15458F1DC6E5D497A3221CEDF1E053627BA18 (float ___0_minValue, float ___1_maxValue, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Slider_get_minValue_m4443221B443E357866F07B062CE39944134C794C_inline (Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68 (int32_t ___0_minInclusive, int32_t ___1_maxExclusive, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float EyeController_main_RandomGaussian_m67C15458F1DC6E5D497A3221CEDF1E053627BA18 (float ___0_minValue, float ___1_maxValue, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Max_m870B77F6A5225EC21D9778043F987B9B17D08F6B_inline (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___0_values, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float CubismParameter_get_MaximumValue_mE8C5C87410B8FCD46E73F1006543B3C0E2DF04EB (CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CubismRenderer_set_LocalSortingOrder_mDD0E43D28485525E34E8F08343C8E698480522AE (CubismRenderer_t0EED3DD1105B0F9004C0A95E2582D50AB9BBF72F* __this, int32_t ___0_value, const RuntimeMethod* method) ;
@@ -5210,132 +5211,136 @@ IL_017f:
 
 IL_01d6:
 	{
-		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
-		float L_55 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_ymove;
-		if ((!(((float)L_55) <= ((float)(0.0f)))))
-		{
-			goto IL_020d;
-		}
-	}
-	{
-		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_55 = __this->___ySlider;
+		NullCheck(L_55);
 		float L_56;
-		L_56 = EyeController_main_RandomGaussian_m67C15458F1DC6E5D497A3221CEDF1E053627BA18((-0.5f), (0.5f), NULL);
-		__this->___yCurrent = L_56;
-		float L_57;
-		L_57 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((0.0f), (6.0f), NULL);
-		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_ymove = L_57;
-		goto IL_021d;
-	}
-
-IL_020d:
-	{
-		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
-		float L_58 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_ymove;
-		float L_59;
-		L_59 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_ymove = ((float)il2cpp_codegen_subtract(L_58, L_59));
-	}
-
-IL_021d:
-	{
-		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
-		float L_60 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle;
-		if ((!(((float)L_60) <= ((float)(0.0f)))))
+		L_56 = VirtualFuncInvoker0< float >::Invoke(46, L_55);
+		float L_57 = __this->___yCurrent;
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		float L_58;
+		L_58 = fabsf(((float)il2cpp_codegen_subtract(L_56, L_57)));
+		double L_59 = __this->___Y_DELTA_LIMIT;
+		if ((!(((double)((double)L_58)) > ((double)L_59))))
 		{
-			goto IL_029d;
+			goto IL_022d;
 		}
 	}
 	{
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_61 = __this->___xSlider;
+		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_60 = __this->___closest;
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_61 = __this->___ySlider;
 		NullCheck(L_61);
 		float L_62;
-		L_62 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_61, NULL);
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_63 = __this->___xSlider;
-		NullCheck(L_63);
-		float L_64;
-		L_64 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_63, NULL);
-		float L_65;
-		L_65 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494(((float)(((float)((-L_62)))/(20.0f))), ((float)(((float)L_64)/(20.0f))), NULL);
+		L_62 = VirtualFuncInvoker0< float >::Invoke(46, L_61);
 		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
-		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle = L_65;
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_66 = __this->___ySlider;
-		NullCheck(L_66);
-		float L_67;
-		L_67 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_66, NULL);
-		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_68 = __this->___ySlider;
-		NullCheck(L_68);
-		float L_69;
-		L_69 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_68, NULL);
-		float L_70;
-		L_70 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494(((float)(((float)((-L_67)))/(20.0f))), ((float)(((float)L_69)/(20.0f))), NULL);
-		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle = L_70;
-		float L_71;
-		L_71 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((0.0f), (1.5f), NULL);
-		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle = L_71;
-		goto IL_02ad;
+		DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* L_63 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___Y_SET;
+		NullCheck(L_60);
+		double L_64;
+		L_64 = Func_3_Invoke_m1AB633A955DCC8CB7A03B5BEAF3D806E36B73F7D_inline(L_60, ((double)L_62), L_63, NULL);
+		__this->___yCurrent = ((float)L_64);
+		float L_65;
+		L_65 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((0.0f), (1.5f), NULL);
+		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle = L_65;
 	}
 
-IL_029d:
+IL_022d:
 	{
 		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
-		float L_72 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle;
+		float L_66 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle;
+		if ((!(((float)L_66) <= ((float)(0.0f)))))
+		{
+			goto IL_02ad;
+		}
+	}
+	{
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_67 = __this->___xSlider;
+		NullCheck(L_67);
+		float L_68;
+		L_68 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_67, NULL);
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_69 = __this->___xSlider;
+		NullCheck(L_69);
+		float L_70;
+		L_70 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_69, NULL);
+		float L_71;
+		L_71 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494(((float)(((float)((-L_68)))/(20.0f))), ((float)(((float)L_70)/(20.0f))), NULL);
+		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
+		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle = L_71;
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_72 = __this->___ySlider;
+		NullCheck(L_72);
 		float L_73;
-		L_73 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle = ((float)il2cpp_codegen_subtract(L_72, L_73));
+		L_73 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_72, NULL);
+		Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* L_74 = __this->___ySlider;
+		NullCheck(L_74);
+		float L_75;
+		L_75 = Slider_get_maxValue_mB34C0C9337F5D00ECB2915E8008BCAEB8E7C5FB6_inline(L_74, NULL);
+		float L_76;
+		L_76 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494(((float)(((float)((-L_73)))/(20.0f))), ((float)(((float)L_75)/(20.0f))), NULL);
+		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle = L_76;
+		float L_77;
+		L_77 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((0.0f), (1.5f), NULL);
+		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle = L_77;
+		goto IL_02bd;
 	}
 
 IL_02ad:
 	{
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_74 = __this->___eyeballXL;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_75 = __this->___eyeballXL;
-		NullCheck(L_75);
-		float L_76 = L_75->___Value;
-		float L_77 = __this->___xCurrent;
 		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
-		float L_78 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
+		float L_78 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle;
 		float L_79;
 		L_79 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_80;
-		L_80 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_76, ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(L_77, L_78)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_79, (18.0f))), NULL);
-		NullCheck(L_74);
-		L_74->___Value = L_80;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_81 = __this->___eyeballYL;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_82 = __this->___eyeballYL;
-		NullCheck(L_82);
-		float L_83 = L_82->___Value;
-		float L_84 = __this->___yCurrent;
-		float L_85 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
-		float L_86;
-		L_86 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_87;
-		L_87 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_83, ((float)il2cpp_codegen_add(L_84, L_85)), ((float)il2cpp_codegen_multiply(L_86, (18.0f))), NULL);
+		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle = ((float)il2cpp_codegen_subtract(L_78, L_79));
+	}
+
+IL_02bd:
+	{
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_80 = __this->___eyeballXL;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_81 = __this->___eyeballXL;
 		NullCheck(L_81);
-		L_81->___Value = L_87;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_88 = __this->___eyeballXR;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_89 = __this->___eyeballXR;
-		NullCheck(L_89);
-		float L_90 = L_89->___Value;
-		float L_91 = __this->___xCurrent;
-		float L_92 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
-		float L_93;
-		L_93 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_94;
-		L_94 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_90, ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_91, L_92)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_93, (18.0f))), NULL);
+		float L_82 = L_81->___Value;
+		float L_83 = __this->___xCurrent;
+		il2cpp_codegen_runtime_class_init_inline(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var);
+		float L_84 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
+		float L_85;
+		L_85 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_86;
+		L_86 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_82, ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(L_83, L_84)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_85, (18.0f))), NULL);
+		NullCheck(L_80);
+		L_80->___Value = L_86;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_87 = __this->___eyeballYL;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_88 = __this->___eyeballYL;
 		NullCheck(L_88);
-		L_88->___Value = L_94;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_95 = __this->___eyeballYR;
-		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_96 = __this->___eyeballYR;
-		NullCheck(L_96);
-		float L_97 = L_96->___Value;
-		float L_98 = __this->___yCurrent;
-		float L_99 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
-		float L_100;
-		L_100 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_101;
-		L_101 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_97, ((float)il2cpp_codegen_add(L_98, L_99)), ((float)il2cpp_codegen_multiply(L_100, (18.0f))), NULL);
+		float L_89 = L_88->___Value;
+		float L_90 = __this->___yCurrent;
+		float L_91 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
+		float L_92;
+		L_92 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_93;
+		L_93 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_89, ((float)il2cpp_codegen_add(L_90, L_91)), ((float)il2cpp_codegen_multiply(L_92, (18.0f))), NULL);
+		NullCheck(L_87);
+		L_87->___Value = L_93;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_94 = __this->___eyeballXR;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_95 = __this->___eyeballXR;
 		NullCheck(L_95);
-		L_95->___Value = L_101;
+		float L_96 = L_95->___Value;
+		float L_97 = __this->___xCurrent;
+		float L_98 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetX_idle;
+		float L_99;
+		L_99 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_100;
+		L_100 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_96, ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_97, L_98)), (0.200000003f))), ((float)il2cpp_codegen_multiply(L_99, (18.0f))), NULL);
+		NullCheck(L_94);
+		L_94->___Value = L_100;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_101 = __this->___eyeballYR;
+		CubismParameter_tD90802B9BB451735498CBBAF28B92CE9CCACB1F1* L_102 = __this->___eyeballYR;
+		NullCheck(L_102);
+		float L_103 = L_102->___Value;
+		float L_104 = __this->___yCurrent;
+		float L_105 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___offsetY_idle;
+		float L_106;
+		L_106 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		float L_107;
+		L_107 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_103, ((float)il2cpp_codegen_add(L_104, L_105)), ((float)il2cpp_codegen_multiply(L_106, (18.0f))), NULL);
+		NullCheck(L_101);
+		L_101->___Value = L_107;
 		return;
 	}
 }
@@ -6789,31 +6794,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EyeController_main__ctor_m69D66655F4E592
 		DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* L_0 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___X_SET;
 		NullCheck(L_0);
 		__this->___X_DELTA_LIMIT = ((double)il2cpp_codegen_multiply(((double)((2.0)/((double)((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_0)->max_length)), 1))))), (0.75)));
+		DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* L_1 = ((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___Y_SET;
+		NullCheck(L_1);
+		__this->___Y_DELTA_LIMIT = ((double)il2cpp_codegen_multiply(((double)((2.0)/((double)((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_1)->max_length)), 1))))), (0.75)));
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var);
-		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_1 = ((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9__84_0;
-		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_2 = L_1;
-		if (L_2)
+		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_2 = ((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9__84_0;
+		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_3 = L_2;
+		if (L_3)
 		{
-			G_B2_0 = L_2;
+			G_B2_0 = L_3;
 			G_B2_1 = __this;
-			goto IL_0044;
+			goto IL_0068;
 		}
-		G_B1_0 = L_2;
+		G_B1_0 = L_3;
 		G_B1_1 = __this;
 	}
 	{
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var);
-		U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B* L_3 = ((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9;
-		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_4 = (Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371*)il2cpp_codegen_object_new(Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371_il2cpp_TypeInfo_var);
-		Func_3__ctor_m5E16475B821B3D6009090747D7507AD59FE59F8A(L_4, L_3, (intptr_t)((void*)U3CU3Ec_U3C_ctorU3Eb__84_0_mFD516229D4AAFF2B8C155EFAE47771713824B650_RuntimeMethod_var), NULL);
-		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_5 = L_4;
-		((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9__84_0 = L_5;
-		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9__84_0), (void*)L_5);
-		G_B2_0 = L_5;
+		U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B* L_4 = ((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9;
+		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_5 = (Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371*)il2cpp_codegen_object_new(Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371_il2cpp_TypeInfo_var);
+		Func_3__ctor_m5E16475B821B3D6009090747D7507AD59FE59F8A(L_5, L_4, (intptr_t)((void*)U3CU3Ec_U3C_ctorU3Eb__84_0_mFD516229D4AAFF2B8C155EFAE47771713824B650_RuntimeMethod_var), NULL);
+		Func_3_t6222A59C885E2C8638BA802DB264974FADE0C371* L_6 = L_5;
+		((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9__84_0 = L_6;
+		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tB57432C307FD299FEE852B200F472FF3E943D70B_il2cpp_TypeInfo_var))->___U3CU3E9__84_0), (void*)L_6);
+		G_B2_0 = L_6;
 		G_B2_1 = G_B1_1;
 	}
 
-IL_0044:
+IL_0068:
 	{
 		NullCheck(G_B2_1);
 		G_B2_1->___closest = G_B2_0;
@@ -6839,8 +6847,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EyeController_main__cctor_mFA5BB48D39D60
 		RuntimeHelpers_InitializeArray_m751372AA3F24FBF6DA9B9D687CBFA2DE436CAB9B((RuntimeArray*)L_1, L_2, NULL);
 		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___X_SET = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___X_SET), (void*)L_1);
+		DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* L_3 = (DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE*)(DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE*)SZArrayNew(DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE_il2cpp_TypeInfo_var, (uint32_t)((int32_t)21));
+		DoubleU5BU5D_tCC308475BD3B8229DB2582938669EF2F9ECC1FEE* L_4 = L_3;
+		RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 L_5 = { reinterpret_cast<intptr_t> (U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____80AED0851B5BB77C360D25879E5BCE275EA8F75080B6EA25B9006760A4F5DF22_FieldInfo_var) };
+		RuntimeHelpers_InitializeArray_m751372AA3F24FBF6DA9B9D687CBFA2DE436CAB9B((RuntimeArray*)L_4, L_5, NULL);
+		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___Y_SET = L_4;
+		Il2CppCodeGenWriteBarrier((void**)(&((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___Y_SET), (void*)L_4);
 		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_idle = (0.0f);
-		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_ymove = (0.0f);
 		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_blink = (0.0f);
 		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_glitch = (0.0f);
 		((EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_StaticFields*)il2cpp_codegen_static_fields_for(EyeController_main_t9043745D423F64C21BDB9E93F603723CF5F5D334_il2cpp_TypeInfo_var))->___timer_gears = (0.0f);
