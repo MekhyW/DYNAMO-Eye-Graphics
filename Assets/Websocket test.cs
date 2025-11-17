@@ -14,8 +14,8 @@ public class Websockettest : MonoBehaviour
     {
         string[] terms = message.Split(' ');
         if (terms[0] == "VIDEO" && terms.Length >= 2 && terms.Length <= 3) { return true; }
-        if (terms.Length < 13) { Debug.Log("not enough terms"); return false; }
-        for (int i = 0; i < 13; i++)
+        if (terms.Length < 14) { Debug.Log("not enough terms"); return false; }
+        for (int i = 0; i < 14; i++)
         {
             if (!float.TryParse(terms[i], out float value)) { Debug.Log("value not a number"); return false; }
             if (value < -1) { Debug.Log("value out of range"); return false; }

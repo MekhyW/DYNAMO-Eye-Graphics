@@ -82,16 +82,16 @@ public class Websocket : MonoBehaviour
                         neutralSlider.value = float.Parse(terms[7], CultureInfo.InvariantCulture);
                         sadSlider.value = float.Parse(terms[8], CultureInfo.InvariantCulture);
                         surprisedSlider.value = float.Parse(terms[9], CultureInfo.InvariantCulture);
-                        int manual_expression = int.Parse(terms[10], CultureInfo.InvariantCulture);
-                        sillyMode.isOn = int.Parse(terms[11], CultureInfo.InvariantCulture) == 1;
-                        brightnessSlider.value = float.Parse(terms[12], CultureInfo.InvariantCulture)/100f;
+                        mischievousSlider.value = float.Parse(terms[10], CultureInfo.InvariantCulture);
+                        int manual_expression = int.Parse(terms[11], CultureInfo.InvariantCulture);
+                        sillyMode.isOn = int.Parse(terms[12], CultureInfo.InvariantCulture) == 1;
+                        brightnessSlider.value = float.Parse(terms[13], CultureInfo.InvariantCulture)/100f;
                         hypnoticSlider.value = manual_expression == 6 ? 1 : 0;
                         heartSlider.value = manual_expression == 7 ? 1 : 0;
                         rainbowSlider.value = manual_expression == 8 ? 1 : 0;
                         nightmareSlider.value = manual_expression == 9 ? 1 : 0;
                         gearsSlider.value = manual_expression == 10 ? 1 : 0;
                         sansSlider.value = manual_expression == 11 ? 1 : 0;
-                        mischievousSlider.value = manual_expression == 12 ? 1 : 0;
                     }
                 }
                 else { response = "Invalid message format!"; }
