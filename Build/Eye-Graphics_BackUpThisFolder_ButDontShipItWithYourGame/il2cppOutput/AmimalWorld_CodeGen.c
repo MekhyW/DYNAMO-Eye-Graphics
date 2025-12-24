@@ -50,7 +50,7 @@ static const int32_t s_InvokerIndices[12] =
 	7655,
 	0,
 	7655,
-	13877,
+	13880,
 	7655,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AmimalWorld_CodeGenModule;

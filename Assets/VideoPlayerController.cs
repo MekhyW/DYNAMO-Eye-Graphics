@@ -31,6 +31,49 @@ public class VideoPlayerController : MonoBehaviour
             videoPlayer.prepareCompleted -= OnVideoPrepared;
         }
     }
+
+    IEnumerator DownloadAndPlay(string url, bool retryOnFailure = true)
+    {
+        if (System.IO.Directory.Exists(Application.temporaryCachePath))
+        {
+            try { System.IO.Directory.Delete(Application.temporaryCachePath, true); }
+            catch (System.Exception e) { Debug.LogWarning($"Could not delete cache directory: {e.Message}"); }
+        }
+        if (!System.IO.Directory.Exists(Application.temporaryCachePath)) { System.IO.Directory.CreateDirectory(Application.temporaryCachePath); }
+        string fileName = System.IO.Path.GetFileName(url);
+        string localPath = System.IO.Path.Combine(Application.temporaryCachePath, fileName);
+        using (var req = UnityEngine.Networking.UnityWebRequest.Get(url))
+        {
+            req.downloadHandler = new UnityEngine.Networking.DownloadHandlerFile(localPath);
+            req.timeout = 30;
+            yield return req.SendWebRequest();
+            if (req.result != UnityEngine.Networking.UnityWebRequest.Result.Success)
+            {
+                if (retryOnFailure && req.responseCode == 404)
+                {
+                    Debug.LogWarning($"Video not found (404): {url}. Retrying in 5 seconds...");
+                    yield return new WaitForSeconds(5f);
+                    yield return StartCoroutine(DownloadAndPlay(url, false));
+                    yield break;
+                }
+                Debug.LogError($"Video download failed: {req.error}");
+                yield break;
+            }
+        }
+        PlayLocalVideo(localPath);
+    }
+
+    void PlayLocalVideo(string localPath)
+    {
+        StopVideo();
+        currentUrl = localPath;
+        hasPlayedOnce = false;
+        videoPlayer.url = localPath;
+        videoPlayer.isLooping = false;
+        videoPlayer.SetDirectAudioVolume(0, initialVolume);
+        ActivateCanvases(true);
+        videoPlayer.Prepare();
+    }
     
     /// <summary>
     /// Plays a video with sound once, then loops it muted
@@ -38,20 +81,7 @@ public class VideoPlayerController : MonoBehaviour
     /// <param name="url">The URL or path of the video to play</param>
     public void PlayVideoWithSoundOnce(string url)
     {
-        if (videoPlayer == null)
-        {
-            Debug.LogError("VideoPlayer component not found!");
-            return;
-        }
-        StopVideo();
-        currentUrl = url;
-        hasPlayedOnce = false;
-        videoPlayer.url = url;
-        videoPlayer.isLooping = false;
-        videoPlayer.SetDirectAudioVolume(0, initialVolume);
-        gameObject.SetActive(true);
-        ActivateCanvases(true);
-        videoPlayer.Prepare();
+        StartCoroutine(DownloadAndPlay(url));
     }
     
     /// <summary>
@@ -63,7 +93,6 @@ public class VideoPlayerController : MonoBehaviour
         isCurrentlyPlaying = false;
         hasPlayedOnce = false;
         ActivateCanvases(false);
-        gameObject.SetActive(false);
     }
     
     /// <summary>

@@ -131,7 +131,7 @@ static const int32_t s_InvokerIndices[37] =
 	7655,
 	7655,
 	7655,
-	13879,
+	13882,
 	7655,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_SerializedReferenceExample_CodeGenModule;
