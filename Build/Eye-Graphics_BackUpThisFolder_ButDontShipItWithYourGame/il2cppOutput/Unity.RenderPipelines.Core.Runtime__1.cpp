@@ -12011,7 +12011,7 @@ IL_0146:
 		L_68 = IntrospectionExtensions_GetTypeInfo_mF4497C8656153A91554F7DC469CE223AF2784FF5(L_67, NULL);
 		NullCheck(L_68);
 		Type_t* L_69;
-		L_69 = VirtualFuncInvoker0< Type_t* >::Invoke(107, L_68);
+		L_69 = VirtualFuncInvoker0< Type_t* >::Invoke(108, L_68);
 		NullCheck(L_69);
 		TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* L_70;
 		L_70 = VirtualFuncInvoker0< TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* >::Invoke(48, L_69);
